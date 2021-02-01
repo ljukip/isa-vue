@@ -70,11 +70,35 @@ export default {
   },
   methods: {
     login: function (user) {
-      axios.post("http://localhost:8080/auth/login", {
-        username: user.username,
-        password: user.password,
-      });
+      axios
+        .post("http://localhost:8080/auth/login", {
+          username: user.username,
+          password: user.password,
+        })
+        .then((Response) => this.loginSuccessful(Response.data))
+        .catch(() => this.loginFailed());
     },
+    loginSuccessful: function (data) {
+      if (!data.accessToken) {
+        this.loginFailed();
+        return;
+      }
+      localStorage.setItem("accessToken", data.accessToken);
+      axios.defaults.headers.common["Authorization"] =
+        "Bearer " + localStorage.getItem("accessToken");
+      this.error = false;
+      this.$router.push("/");
+    },
+    loginFailed: function () {
+      localStorage.removeItem("accessToken");
+      this.error = true;
+      setTimeout(() => (this.error = false), 3000);
+    },
+  },
+  created() {
+    if (localStorage.getItem("accessToken")) {
+      this.$router.push("/");
+    }
   },
 };
 </script>
