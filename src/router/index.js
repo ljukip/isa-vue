@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import UserProfile from "../views/UserProfile.vue";
 import UserHome from "../views/UserHome.vue";
+import NewAppointmentDermatology from "../views/NewAppointmentDermatology.vue";
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,11 @@ const routes = [
     path: "/userProfile",
     name: "UserProfile",
     component: UserProfile
+  },
+  {
+    path: "/newAppointmentDermatology",
+    name: "NewAppointmentDermatology",
+    component: NewAppointmentDermatology
   },
   {
     path: "/userHome",
