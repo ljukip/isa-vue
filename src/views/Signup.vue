@@ -264,20 +264,61 @@ export default {
           this.messages.errorNotEqualNewPassword = `<h4>Your passwords don't match! Please try again...</h4>`;
           setTimeout(() => (this.messages.errorNotEqualNewPassword = ""), 3000);
         } else {
-          console.log(user);
-          // axios
-          // .post('rest/signup', {
-          // username: user.username,
-          // password: user.password,
-          // firstname: user.firstname,
-          // lastname: user.lastname,
-          // gender: user.gender,
-          // role: user.role
-          // })
-          // .then(response => this.signupSuccessful(response))
-          // .catch(() => this.signupFailed())
+          axios
+            .post("http://localhost:8080/auth/signup", {
+              username: user.username,
+              password: user.password,
+              firstname: user.firstname,
+              lastname: user.lastname,
+              address: user.address,
+              city: user.city,
+              country: user.country,
+              phone: user.phone,
+            })
+            .then((response) => this.signupSuccessful(response))
+            .catch(() => this.signupFailed());
         }
       }
+    },
+    signupSuccessful: function (response) {
+      if (response.status === 201) {
+        this.login(response.data);
+      }
+      this.signupFailed();
+    },
+    signupFailed: function () {
+      this.error = true;
+      setTimeout(() => (this.error = false), 5000);
+      this.messages.errorResponse = `<h4>Username already exists!</h4>`;
+      // setTimeout(() => this.messages.errorResponse='', 5000);
+    },
+    login: function (user) {
+      axios
+        .post("http://localhost:8080/auth/login", {
+          username: user.username,
+          password: user.password,
+        })
+        .then((Response) => this.loginSuccessful(Response.data))
+        .catch(() => this.loginFailed());
+    },
+    loginSuccessful: function (data) {
+      console.log(data);
+      if (!data.accessToken) {
+        this.loginFailed();
+        return;
+      }
+      localStorage.setItem("accessToken", JSON.stringify(data.accessToken));
+      localStorage.setItem("role", data.role);
+      axios.defaults.headers.common["Authorization"] =
+        "Bearer " + localStorage.getItem("accessToken");
+      this.error = false;
+      this.$router.push("/");
+    },
+    loginFailed: function () {
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("role");
+      this.error = true;
+      setTimeout(() => (this.error = false), 3000);
     },
   },
 };

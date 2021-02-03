@@ -93,6 +93,7 @@ export default {
     },
     loginFailed: function () {
       localStorage.removeItem("accessToken");
+      localStorage.removeItem("role");
       this.error = true;
       setTimeout(() => (this.error = false), 3000);
     },
