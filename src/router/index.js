@@ -8,6 +8,8 @@ import UserHome from "../views/UserHome.vue";
 import NewAppointmentDermatology from "../views/NewAppointmentDermatology.vue";
 import PharmacistHome from "../views/PharmacistHome.vue";
 import DermatologistHome from "../views/DermatologistHome.vue";
+import Login from "../views/Login.vue";
+import Signup from "../views/Signup.vue";
 
 Vue.use(VueRouter);
 
@@ -51,6 +53,16 @@ const routes = [
     path: "/pharmacistHome",
     name: "PharmacistHome",
     component: PharmacistHome
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login
+  },
+  {
+    path: "/signup",
+    name: "Signup",
+    component: Signup
   },
   {
     path: "/about",

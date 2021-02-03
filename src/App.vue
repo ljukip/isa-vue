@@ -55,7 +55,7 @@
             </li>
             <li v-if="role === 'PATIENT'" class="nav-item">
               <a
-                href="#/newAppointment"
+                href="#/newAppointmentDermatology"
                 data-toggle="tooltip"
                 title="new dermatologist appointment"
                 class="nav-link"
@@ -89,7 +89,7 @@
               <a href="#/login" data-toggle="tooltip" title="login"
                 ><img src="./images/login.png" width="44" height="44" />
               </a>
-              <a href="#/registration" data-toggle="tooltip" title="register"
+              <a href="#/signup" data-toggle="tooltip" title="register"
                 ><img src="./images/register.png" width="44" height="44" />
               </a>
             </li>
