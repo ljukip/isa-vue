@@ -1,18 +1,18 @@
 <template>
   <div class="home">
-    <HomeFront msg="Welcome to Your Vue.js App" />
+    <NewAppointments />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 //import HelloWorld from "@/components/HelloWorld.vue";
-import HomeFront from "@/components/homeFront.vue";
+import NewAppointments from "@/components/newAppointmentDermatology.vue";
 
 export default {
-  name: "Home",
+  name: "NewAppointmentsDermatology",
   components: {
-    HomeFront,
+    NewAppointments,
   },
 };
 </script>
