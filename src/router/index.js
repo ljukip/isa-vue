@@ -10,6 +10,8 @@ import PharmacistHome from "../views/PharmacistHome.vue";
 import DermatologistHome from "../views/DermatologistHome.vue";
 import Login from "../views/Login.vue";
 import Signup from "../views/Signup.vue";
+import FutureAppointments from "../views/FutureAppointments.vue"
+import PassedAppointments from "../views/PassedAppointments.vue"
 
 Vue.use(VueRouter);
 
@@ -28,6 +30,16 @@ const routes = [
     path: "/newAppointmentDermatology",
     name: "NewAppointmentDermatology",
     component: NewAppointmentDermatology
+  },
+  {
+    path: "/historyDermatology",
+    name: "PassedAppointments",
+    component: PassedAppointments
+  },
+  {
+    path: "/futureAppointments",
+    name: "FutureAppointments",
+    component: FutureAppointments
   },
   {
     path: "/userHome",
