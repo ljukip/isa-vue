@@ -22,6 +22,7 @@ import WorkingHoursDermatologist from "../views/WorkingHoursDermatologist.vue"
 import ListOfPatientsP from "../views/ListOfPatientsP.vue"
 import ListOfPatientsD from "../views/ListOfPatientsD.vue"
 import StartConsultationPharmacist from "../views/StartConsultationPharmacist.vue"
+import NewConsultation from "../views/NewConsultation.vue"
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,11 @@ const routes = [
     path: "/userProfile",
     name: "UserProfile",
     component: UserProfile
+  },
+  {
+    path: "/newConsultation",
+    name: "NewConsultation",
+    component: NewConsultation
   },
   {
     path: "/newAppointmentDermatology",

@@ -1,4 +1,4 @@
-<template>
+												<template>
   <div style="height: 81.7%">
     <nav>
       <h1 style="margin-top: 10px; color: #35424a">Future appointments</h1>
@@ -25,12 +25,7 @@
               <td>{{ new Date(appointment.date) }}</td>
               <td>{{ appointment.time }}</td>
               <td>
-                <div
-                  v-bind:key="dermatolog.id"
-                  v-for="dermatolog in getDermatologist"
-                >
-                  {{ dermatolog.firstName }}
-                </div>
+                {{ appointment.dermatologistID }}
               </td>
               <td>{{ appointment.price }}</td>
               <td>{{ appointment.rating }}</td>
@@ -56,7 +51,7 @@
   </div>
 </template>
 
-<script>
+												<script>
 import Swal from "sweetalert2";
 import axios from "axios";
 
@@ -65,16 +60,23 @@ export default {
     return {
       appointmentsFuture: [],
       appointments: [],
-      dermatolog: [],
+      dermatologist: {
+        name: "",
+        surname: "",
+      },
       empty: false,
     };
   },
   methods: {
-    getDermatologist() {
+    getDermatologist(id) {
       axios
-        .get("http://localhost:8086/dermatologist/all")
-        .then((Response) => (this.dermatolog = Response.data));
-      return this.dermatolog;
+        .get("http://localhost:8086/appointment/getDermatologist/" + id)
+        .then(
+          (Response) => (
+            (this.dermatologist.name = Response.data.firstName),
+            (this.dermatologist.surname = Response.data.lastname)
+          )
+        );
     },
     cancel(id, patientID, date) {
       var today = new Date();
@@ -124,6 +126,10 @@ export default {
         var date = new Date(this.appointments[i].date);
         console.log(date.toDateString() + today.toDateString());
         if (today < date) {
+          this.appointments[i].dermatologist = this.getDermatologist(
+            this.appointments[i].dermatologistID
+          );
+          console.log(this.appointments[i].dermatologistID);
           this.appointmentsFuture.push(this.appointments[i]);
         }
       }
@@ -154,7 +160,7 @@ export default {
 };
 </script>
 
-    <style scoped>
+	<style scoped>
 #myTable {
   border-collapse: collapse;
   width: 100%;
