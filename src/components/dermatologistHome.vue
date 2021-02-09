@@ -78,7 +78,6 @@
                             <div class="card-body text-center">
                                 <h4 class="card-title mb-0" style="color: #0bb1bd">Calendar</h4>
                                 <div class="card-text text-black-50">
-                                   <br />
                                     <a
                                     href="#/calendar"
                                     v-if="user.role === 'DERMATOLOGIST'"
@@ -88,11 +87,19 @@
                                     </a>
                                     <br />
                                     <a
-                                    href="#/requestForLeave"
+                                    href="#/requestForLeaveD"
                                     v-if="user.role === 'DERMATOLOGIST'"
                                     data-toggle="tooltip"
                                     title="request for leave"
                                     >Request for leave
+                                    </a>
+                                     <br />
+                                    <a
+                                    href="#/workingHoursDermatologist"
+                                    v-if="user.role === 'DERMATOLOGIST'"
+                                    data-toggle="tooltip"
+                                    title="working hours dermatologist"
+                                    >Working hours dermatologist
                                     </a>
                                 </div>
                             </div>

@@ -21,14 +21,6 @@
                            <div class="card-body text-center">
                                <h4 class="card-title mb-0" style="color: #0bb1bd">Consultations</h4>
                                <div class="card-text text-black-50">
-                                  <br/>
-                                   <a 
-                                   href="#/startConsultation"
-                                   v-if="user.role === 'PHARMACIST'"
-                                    data-toggle="tooltip"
-                                    title="start consultation"
-                                   >Start consultation
-                                   </a>
                                    <br />
                                    <a
                                    href="#/scheduleConsultation"
@@ -55,7 +47,7 @@
                                 <div class="card-text text-black-50">
                                    <br />
                                     <a
-                                    href="#/allPatients"
+                                    href="#/listOfPatientsP"
                                     v-if="user.role === 'PHARMACIST'"
                                     data-toggle="tooltip"
                                     title="list of patients"
@@ -86,7 +78,6 @@
                             <div class="card-body text-center">
                                 <h4 class="card-title mb-0" style="color: #0bb1bd">Calendar</h4>
                                 <div class="card-text text-black-50">
-                                   <br />
                                     <a
                                     href="#/calendar"
                                     v-if="user.role === 'PHARMACIST'"
@@ -96,11 +87,19 @@
                                     </a>
                                     <br />
                                     <a
-                                    href="#/requestForLeave"
+                                    href="#/requestForLeaveP"
                                     v-if="user.role === 'PHARMACIST'"
                                     data-toggle="tooltip"
                                     title="request for leave"
                                     >Request for leave
+                                    </a>
+                                     <br />
+                                    <a
+                                    href="#/workingHoursPharmacist"
+                                    v-if="user.role === 'PHARMACIST'"
+                                    data-toggle="tooltip"
+                                    title="working hours pharmacist"
+                                    >Working hours pharmacist
                                     </a>
                                 </div>
                             </div>

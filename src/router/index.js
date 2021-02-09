@@ -12,6 +12,16 @@ import Login from "../views/Login.vue";
 import Signup from "../views/Signup.vue";
 import FutureAppointments from "../views/FutureAppointments.vue"
 import PassedAppointments from "../views/PassedAppointments.vue"
+import ListPharmacies from "../views/ListPharmacies.vue"
+import ScheduleConsultation from "../views/ScheduleConsultation.vue"
+import ScheduleAppointment from "../views/ScheduleAppointment.vue"
+import RequestForLeaveD from "../views/RequestForLeaveD.vue"
+import RequestForLeaveP from "../views/RequestForLeaveP.vue"
+import WorkingHoursPharmacist from "../views/WorkingHoursPharmacist.vue"
+import WorkingHoursDermatologist from "../views/WorkingHoursDermatologist.vue"
+import ListOfPatientsP from "../views/ListOfPatientsP.vue"
+import ListOfPatientsD from "../views/ListOfPatientsD.vue"
+import StartConsultationPharmacist from "../views/StartConsultationPharmacist.vue"
 
 Vue.use(VueRouter);
 
@@ -75,6 +85,56 @@ const routes = [
     path: "/signup",
     name: "Signup",
     component: Signup
+  },
+  {
+    path: "/listPharmacies",
+    name: "ListPharmacies",
+    component: ListPharmacies
+  },
+  {
+    path: "/scheduleConsultation",
+    name: "ScheduleConsultation",
+    component: ScheduleConsultation
+  },
+  {
+    path: "/scheduleAppointment",
+    name: "ScheduleAppointment",
+    component: ScheduleAppointment
+  },
+  {
+    path: "/requestForLeaveD",
+    name: "RequestForLeaveD",
+    component: RequestForLeaveD
+  },
+  {
+    path: "/requestForLeaveP",
+    name: "RequestForLeaveP",
+    component: RequestForLeaveP
+  },
+  {
+    path: "/workingHoursPharmacist",
+    name: "WorkingHoursPharmacist",
+    component: WorkingHoursPharmacist
+  },
+  {
+    path: "/workingHoursDermatologist",
+    name: "WorkingHoursDermatologist",
+    component: WorkingHoursDermatologist
+  },
+  {
+    path: "/listOfPatientsP",
+    name: "ListOfPatientsP",
+    component: ListOfPatientsP
+  },
+  {
+    path: "/listOfPatientsD",
+    name: "ListOfPatientsD",
+    component: ListOfPatientsD
+  },
+  {
+    path: "/startConsultationPharmacist",
+    name: "StartConsultationPharmacist",
+    component: StartConsultationPharmacist
   },
   {
     path: "/about",

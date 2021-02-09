@@ -38,7 +38,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#/about">Pharmacies</a>
+              <a class="nav-link" href="#/listPharmacies">Pharmacies</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Medications</a>
