@@ -98,7 +98,7 @@
       </div>
     </nav>
 
-    <div id="nav" style="margin-top: 117px">
+    <div id="nav" style="margin-top: 117px; min-height: 80vh">
       <router-view />
     </div>
 
@@ -147,6 +147,9 @@ export default {
 
 <style>
 #app {
+  min-height: 100vh;
+  background-size: 1600px 1160px;
+  background-image: url("./images/background.png");
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

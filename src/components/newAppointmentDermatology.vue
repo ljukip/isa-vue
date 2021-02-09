@@ -55,7 +55,10 @@ export default {
     getDermatologist() {},
     newAppointment(pId, Id) {
       axios
-        .post("http://localhost:8086/appointment/reserve/" + Id, localStorage.getItem('username'))
+        .post(
+          "http://localhost:8086/appointment/reserve/" + Id,
+          localStorage.getItem("username")
+        )
         .then((responce) => this.succes(responce.data))
         .catch(() => this.failed());
     },
@@ -67,7 +70,7 @@ export default {
         showConfirmButton: false,
         timer: 1400,
       });
-      this.$router.push("/appointments");
+      this.$router.push("/futureAppointments");
     },
     failed() {
       Swal.fire({
@@ -102,7 +105,7 @@ export default {
 th {
   text-align: left;
   padding: 12px;
-  background-color: #89dfdfd5;
+  background-color: #e2c5fe70;
 }
 td {
   text-align: left;

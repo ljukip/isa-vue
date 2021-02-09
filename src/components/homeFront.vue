@@ -45,7 +45,7 @@
           <p>some text...</p>
         </div>
         <div class="box" id="box3">
-          <img style="height: 14vh" src="../images/consultations.jpg" />
+          <img style="height: 14vh" src="../images/impression.png" />
           <h3>Tell us your impressions</h3>
           <p>Your opinion matters to us!</p>
         </div>
