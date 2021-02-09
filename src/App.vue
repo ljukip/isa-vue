@@ -64,7 +64,7 @@
             </li>
             <li v-if="role === 'PATIENT'" class="nav-item">
               <a
-                href="#/newConsultationAppointment"
+                href="#/newConsultation"
                 data-toggle="tooltip"
                 title="new pharmacist consultation appointment"
                 class="nav-link"

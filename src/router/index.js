@@ -12,6 +12,7 @@ import Login from "../views/Login.vue";
 import Signup from "../views/Signup.vue";
 import FutureAppointments from "../views/FutureAppointments.vue"
 import PassedAppointments from "../views/PassedAppointments.vue"
+import NewConsultation from "../views/NewConsultation.vue"
 
 Vue.use(VueRouter);
 
@@ -25,6 +26,11 @@ const routes = [
     path: "/userProfile",
     name: "UserProfile",
     component: UserProfile
+  },
+  {
+    path: "/newConsultation",
+    name: "NewConsultation",
+    component: NewConsultation
   },
   {
     path: "/newAppointmentDermatology",
